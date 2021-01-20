@@ -19,28 +19,11 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.css">    
 
-<script src="https://unpkg.com/@anypayinc/widget/anypay.min.js"></script>
-
   </head>
   <body id="top">
 
 
 <script src="https://unpkg.com/@anypayinc/widget/anypay.min.js"></script>
-
-anypay.collectPayment({                                                                                               
-  accountId: '1177',                                                                                                  
-  amount: 2.00                                                                                                        
-})                                                                                                                    
-.once('paid', () => {                                                                                                                                                                                                                         
-  console.log('Invoice paid');                                                                                        
-                                                                                                                       
-  setTimeout(() => {                                                                                                                                                                                                                           
-    anypay.close();                                                                                                   
-                                                                                                                            
-  }, 2000);                                                                                                           
-
-})                                                                                                                    
-
 
 <script>
   let invoice = anypay.newPayment({

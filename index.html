@@ -18,8 +18,40 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.css">    
+
+<script src="https://unpkg.com/@anypayinc/widget/anypay.min.js"></script>
+
   </head>
   <body id="top">
+
+
+<script>
+  let invoice = anypay.newPayment({
+    template: [{
+      currency: 'DASH',
+      to: [{
+        currency: 'USD',
+        amount: 150,
+        address: 'XhEh7yEzbJtViSrmJEiJ73CVp1C37j8eW7'
+      }, {
+        currency: 'USD',
+        amount: 10,
+        address: 'XnEw2KjfLVAy1hSXMFWLCcod5X7rLM581p'
+      }]
+    }],
+    options: {
+      webhook: 'https://paypow.com/anypay/webhooks/payments',
+      redirect: 'https://paypow.com/anypay//payments'
+    }
+  
+  })
+  
+  invoice.once('paid', paidInvoice => {
+    // the invoice was paid, guaranteed perfectly correct!
+    anypay.close() // close iframe popup
+  })
+</script>
+
 
 
 <div class="site-wrap">
